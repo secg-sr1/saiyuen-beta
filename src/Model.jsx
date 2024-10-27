@@ -198,7 +198,7 @@ export default function Model() {
                     chipClickVisualization && 
                       <CardMedia 
                       component="img"
-                      src="https://github.com/secg-sr1/saiyuen-alpha/blob/main/public/bridge-02-elements.png?raw=true"
+                      src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-elements-structure.png?raw=true"
                       sx={{ height: 200 }}
                       />
                   }
@@ -209,7 +209,7 @@ export default function Model() {
                     chipClickInstructions && 
                       <CardMedia 
                       component="img"
-                      src="https://github.com/secg-sr1/saiyuen-alpha/blob/main/public/bridge-02-00.png?raw=true"
+                      src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-00.png?raw=true"
                       sx={{ height: 200 }}
                       />
                   }
