@@ -46,9 +46,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import { useStore } from './store/useStore.jsx';
@@ -166,19 +163,6 @@ export default function Model() {
         playsInline
       />
 
-
-
-
-        {/* <SpeedDial
-          ariaLabel='SpeedDial'
-          sx={{position: 'absolute', bottom:8, right:16 }}
-          icon={<SpeedDialIcon /> }
-        >
-          <SpeedDialAction>
-            <h1>hello friend</h1>
-          </SpeedDialAction>
-        </SpeedDial> */}
-
         <Stack direction="row" spacing={1} sx={{position: 'absolute', bottom:8, right:16, zIndex:999}}>
           <Tooltip title="Bridge Info" placement='left'>
             <IconButton sx={{color:'white'}} onClick={handleClickShowAccordion}>
@@ -187,8 +171,6 @@ export default function Model() {
           </Tooltip>
         </Stack>
         
-
-
       {
         showAccordion && 
 
