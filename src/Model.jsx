@@ -319,13 +319,15 @@ export default function Model() {
                   />
                     <CardMedia 
                         component="iframe"
-                        src="https://www.youtube.com/embed/4FOmQkFgicQ?si=wVke1zASp0fnVN3K"
-                        title="YouTube video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        sx={{ height: 220, borderColor:'#000000' }}
+                        src="/saiyuen-beta/bridge-02-vid-00.mp4 "
                         autoplay
-                      
+                        loop 
+                        controls={false}
+                        muted
+                        title="YouTube video"
+                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        // allowFullScreen
+                        sx={{ height: 220, borderColor:'#000000' }}
                       />
   
   
