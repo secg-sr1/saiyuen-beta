@@ -98,7 +98,8 @@ export default function Model() {
   const [expanded, setExpanded ] = useState(false);
   const [ showAccordion, setShowAccordion ] = useState(false);
 
-  const [ chipClickVisualization, setChipClickVisualization ] = useState(true);
+  const [ chipClickVisualizationA, setChipClickVisualizationA ] = useState(true);
+  const [ chipClickVisualizationB, setChipClickVisualizationB ] = useState(false);
   const [ chipClickInstructions, setChipClickInstructions ] = useState(false);
 
   const handleCheckboxChangeBase = (event) => {
@@ -114,13 +115,21 @@ export default function Model() {
     setExpanded(!expanded);
   }
 
-  const handleChipClickVisualization = () => {
-    setChipClickVisualization(true);
+  const handleChipClickVisualizationA = () => {
+    setChipClickVisualizationA(true);
+    setChipClickVisualizationB(false);
+    setChipClickInstructions(false);
+  }
+
+  const handleChipClickVisualizationB = () => {
+    setChipClickVisualizationA(false);
+    setChipClickVisualizationB(true)
     setChipClickInstructions(false);
   }
 
   const handleChipClickInstructions = () => {
-    setChipClickVisualization(false);
+    setChipClickVisualizationA(false);
+    setChipClickVisualizationB(false);
     setChipClickInstructions(true);
   }
 
@@ -189,9 +198,9 @@ export default function Model() {
           
           }}>
           
-            <Accordion>
+            <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}} />}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -200,7 +209,7 @@ export default function Model() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Card sx={{borderRadius:5, boxShadow:5}}>
+                <Card sx={{borderRadius:5, boxShadow:5, backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)'}}>
                   <CardHeader
                     title=""
                     subheader=""
@@ -209,7 +218,17 @@ export default function Model() {
   
   
                     {
-                      chipClickVisualization && 
+                      chipClickVisualizationA && 
+                        <CardMedia 
+                        component="img"
+                        src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-elements-structure-00.png?raw=true"
+                        sx={{ height: 200 }}
+                        />
+                    }
+
+                    
+                    {
+                      chipClickVisualizationB && 
                         <CardMedia 
                         component="img"
                         src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-elements-structure-00.png?raw=true"
@@ -231,7 +250,8 @@ export default function Model() {
                       <CardActions disableSpacing>
                         
                         <Stack direction="row">
-                            <Chip label="visualization" onClick={handleChipClickVisualization} sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:400, backgroundColor: chipClickVisualization ? "#B2BEB5" : "#E5E4E2" }}/>
+                            <Chip label="visualization01" onClick={handleChipClickVisualizationA} sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:400, backgroundColor: chipClickVisualizationA ? "#B2BEB5" : "#E5E4E2" }}/>
+                            <Chip label="visualization02" onClick={handleChipClickVisualizationB} sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:400, backgroundColor: chipClickVisualizationB ? "#B2BEB5" : "#E5E4E2" }}/>
                             <Chip label="instructions" onClick={handleChipClickInstructions} sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:400, backgroundColor: chipClickInstructions ? "#B2BEB5" : "#E5E4E2"}}/>
                         </Stack>
   
@@ -241,7 +261,7 @@ export default function Model() {
                           aria-expanded={expanded}
                           arial-label="show more"
                         >
-                          <ExpandMoreIcon />
+                          <ExpandMoreIcon sx={{color:'#FFFFFF'}}/>
                         </ExpandMore>
   
                       </CardActions>
@@ -259,9 +279,9 @@ export default function Model() {
               </AccordionDetails>
             </Accordion>
   
-            <Accordion>
+            <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}} />}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -270,15 +290,15 @@ export default function Model() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <FormControlLabel control={<Checkbox defaultChecked color='#000000' /> } onChange={handleCheckboxChangeBase} label="Base" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
-                <FormControlLabel control={<Checkbox defaultChecked color='#000000' />} onChange={handleCheckboxChangeStructure} label="Structure" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
+                <FormControlLabel control={<Checkbox defaultChecked sx={{color:'#FFFFFF'}} /> } onChange={handleCheckboxChangeBase} label="Base" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
+                <FormControlLabel control={<Checkbox defaultChecked sx={{color:'#FFFFFF'}} />} onChange={handleCheckboxChangeStructure} label="Structure" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
                 {/* <Typography>Click the floor of the bridge</Typography> */}
               </AccordionDetails>
             </Accordion>
   
-            <Accordion>
+            <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}}/>}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -287,7 +307,7 @@ export default function Model() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Card sx={{borderRadius:5, boxShadow:5}}>
+                <Card sx={{borderRadius:5, boxShadow:5, backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)'}}>
                   <CardHeader
                     // action={
                     //   <IconButton >
@@ -303,7 +323,7 @@ export default function Model() {
                         title="YouTube video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        sx={{ height: 220 }}
+                        sx={{ height: 220, borderColor:'#000000' }}
                         autoplay
                       
                       />
@@ -315,7 +335,7 @@ export default function Model() {
                         </IconButton> */}
   
                         <IconButton aria-label="share">
-                            <ShareIcon />
+                            <ShareIcon sx={{color:'#FFFFFF'}}/>
                         </IconButton>
   
                         <ExpandMore
@@ -324,7 +344,7 @@ export default function Model() {
                           aria-expanded={expanded}
                           arial-label="show more"
                         >
-                          <ExpandMoreIcon />
+                          <ExpandMoreIcon sx={{color:'#FFFFFF'}}/>
                         </ExpandMore>
   
                       </CardActions>
