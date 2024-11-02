@@ -200,7 +200,7 @@ export default function Model() {
           
             <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}} />}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF', transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)', transition: 'transform 0.3s ease',}} />}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -231,7 +231,7 @@ export default function Model() {
                       chipClickVisualizationB && 
                         <CardMedia 
                         component="img"
-                        src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-elements-structure-00.png?raw=true"
+                        src="https://github.com/secg-sr1/saiyuen-beta/blob/main/public/bridge-02-elements-structure-01.png?raw=true"
                         sx={{ height: 200 }}
                         />
                     }
@@ -255,24 +255,24 @@ export default function Model() {
                             <Chip label="instructions" onClick={handleChipClickInstructions} sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:400, backgroundColor: chipClickInstructions ? "#B2BEB5" : "#E5E4E2"}}/>
                         </Stack>
   
-                        <ExpandMore
+                        {/* <ExpandMore
                           expand={expanded}
                           onClick={handleExpandClick}
                           aria-expanded={expanded}
                           arial-label="show more"
                         >
                           <ExpandMoreIcon sx={{color:'#FFFFFF'}}/>
-                        </ExpandMore>
+                        </ExpandMore> */}
   
                       </CardActions>
   
-                      <Collapse in={expanded} timeout="auto" unmountOnExit>
+                      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
                           <CardContent>
                             <Typography sx={{ fontWeight:200, fontSize:"16px"}}>
                             - 象徵著過去與未來的連接。
                             </Typography>
                           </CardContent>
-                      </Collapse>
+                      </Collapse> */}
   
                 </Card>
   
@@ -281,7 +281,7 @@ export default function Model() {
   
             <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}} />}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF', transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)', transition: 'transform 0.3s ease',}} />}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -298,7 +298,7 @@ export default function Model() {
   
             <Accordion sx={{backgroundColor:'transparent', border:'1px solid rgba(255, 255, 255, 0.2)', color:'#FFFFFF'}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF'}}/>}
+                expandIcon={<ExpandMoreIcon sx={{color:'#FFFFFF', transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)', transition: 'transform 0.3s ease',}} />}
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
@@ -340,24 +340,24 @@ export default function Model() {
                             <ShareIcon sx={{color:'#FFFFFF'}}/>
                         </IconButton>
   
-                        <ExpandMore
+                        {/* <ExpandMore
                           expand={expanded}
                           onClick={handleExpandClick}
                           aria-expanded={expanded}
                           arial-label="show more"
                         >
                           <ExpandMoreIcon sx={{color:'#FFFFFF'}}/>
-                        </ExpandMore>
+                        </ExpandMore> */}
   
                       </CardActions>
   
-                      <Collapse in={expanded} timeout="auto" unmountOnExit>
+                      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
                           <CardContent>
                             <Typography sx={{ fontWeight:200, fontSize:"16px"}}>
                             - 象徵著過去與未來的連接。
                             </Typography>
                           </CardContent>
-                      </Collapse>
+                      </Collapse> */}
   
                 </Card>
               </AccordionDetails>
