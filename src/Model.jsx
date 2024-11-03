@@ -139,6 +139,18 @@ export default function Model() {
 
 
 
+  const handleShareInstagram =  () => {
+    const shareText = `${window.location.href}`;
+    navigator.clipboard.writeText(shareText).then(() => {
+      alert('Link copied. You can share Saiyen Experience');
+    }).catch((error) => {
+      console.error('Error copying text:', error);
+      alert('Could not copy text, please try again');
+    })
+  }
+
+
+
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -290,8 +302,8 @@ export default function Model() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <FormControlLabel control={<Checkbox defaultChecked sx={{color:'#FFFFFF'}} /> } onChange={handleCheckboxChangeBase} label="Base" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
-                <FormControlLabel control={<Checkbox defaultChecked sx={{color:'#FFFFFF'}} />} onChange={handleCheckboxChangeStructure} label="Structure" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
+                <FormControlLabel control={<Checkbox defaultChecked sx={{ color: '#FFFFFF', '&.Mui-checked': { color: '#FFFFFF',},}} /> } onChange={handleCheckboxChangeBase} label="Base" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
+                <FormControlLabel control={<Checkbox defaultChecked sx={{ color: '#FFFFFF', '&.Mui-checked': { color: '#FFFFFF',},}} />} onChange={handleCheckboxChangeStructure} label="Structure" sx={{fontFamily:'Montserrat, Arial, sans-serif', fontWeight:300}} />
                 {/* <Typography>Click the floor of the bridge</Typography> */}
               </AccordionDetails>
             </Accordion>
@@ -318,16 +330,13 @@ export default function Model() {
                     subheader=""
                   />
                     <CardMedia 
-                        component="iframe"
-                        src="/saiyuen-beta/bridge-02-vid-00.mp4 "
-                        autoplay
-                        loop 
-                        controls={false}
+                        component="video"
+                        src="/saiyuen-beta/bridge-02-vid-00.mp4"
+                        autoPlay
+                        loop
                         muted
-                        title="YouTube video"
-                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        // allowFullScreen
-                        sx={{ height: 220, borderColor:'#000000' }}
+                        controls={false}
+                        title="video"
                       />
   
   
@@ -336,9 +345,11 @@ export default function Model() {
                           <FavoriteIcon />
                         </IconButton> */}
   
-                        <IconButton aria-label="share">
-                            <ShareIcon sx={{color:'#FFFFFF'}}/>
-                        </IconButton>
+                        <Tooltip title="Share Saiyuen" placement='left'>
+                          <IconButton aria-label="share" onClick={handleShareInstagram}>
+                              <ShareIcon sx={{color:'#FFFFFF'}} />
+                          </IconButton>
+                        </Tooltip>
   
                         {/* <ExpandMore
                           expand={expanded}
