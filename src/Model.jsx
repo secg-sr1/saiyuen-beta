@@ -47,6 +47,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 import { useStore } from './store/useStore.jsx';
 
@@ -137,6 +138,10 @@ export default function Model() {
     setShowAccordion(!showAccordion)
   }
 
+  const handleClickHideAccordion = () => {
+    setShowAccordion(false)
+  }
+
 
 
   const handleShareInstagram =  () => {
@@ -186,9 +191,15 @@ export default function Model() {
 
         <Stack direction="row" spacing={1} sx={{position: 'absolute', bottom:8, right:16, zIndex:999}}>
           <Tooltip title="Bridge Info" placement='left'>
+            {!showAccordion && 
             <IconButton sx={{color:'white'}} onClick={handleClickShowAccordion}>
-              <AddCircleIcon  fontSize='large'/>
+               <AddCircleIcon  fontSize='large'/>
+            </IconButton> }
+            {showAccordion && 
+            <IconButton>
+              <RemoveCircleIcon sx={{color:'white'}} fontSize='large' onClick={handleClickHideAccordion}/>
             </IconButton>
+            }
           </Tooltip>
         </Stack>
         
@@ -332,10 +343,10 @@ export default function Model() {
                     <CardMedia 
                         component="video"
                         src="/saiyuen-beta/bridge-02-vid-00.mp4"
-                        autoPlay
+                        // autoPlay
                         loop
                         muted
-                        controls={false}
+                        controls={true}
                         title="video"
                       />
   
