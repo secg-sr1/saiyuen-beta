@@ -10,4 +10,5 @@ export default defineConfig({
     topLevelAwait(),
   ],
   base: '/saiyuen-beta',
+  // base: '/',
 })
