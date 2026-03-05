@@ -77,8 +77,8 @@ export default function Scene() {
   const [ showCard, setShowCard ] = useState(false);
   const [expanded, setExpanded ] = useState(false);
 
-  const gltf = useLoader(GLTFLoader, 'https://cdn.glitch.global/610da9c5-d3d9-48be-83b9-3836bdc195cb/bidge-02-base-01.glb?v=1730668304351');
-  const gltfBridge = useLoader(GLTFLoader, 'https://cdn.glitch.global/610da9c5-d3d9-48be-83b9-3836bdc195cb/bidge-02-structure-01.glb?v=1730668365969');
+  const gltf = useLoader(GLTFLoader, 'https://raw.githubusercontent.com/secg-sr1/sai-models/refs/heads/main/bidge-02-base-01.glb');
+  const gltfBridge = useLoader(GLTFLoader, 'https://raw.githubusercontent.com/secg-sr1/sai-models/refs/heads/main/bidge-02-structure-01.glb');
   // const gltfHandrail = useLoader(GLTFLoader, 'https://cdn.glitch.global/610da9c5-d3d9-48be-83b9-3836bdc195cb/bridge-02-structure.glb?v=1729987350445');
 
 
